@@ -59,4 +59,8 @@ public class ArrayStack<T> {
         if (size == 0) return null;
         return data[size-1];
     }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
 }

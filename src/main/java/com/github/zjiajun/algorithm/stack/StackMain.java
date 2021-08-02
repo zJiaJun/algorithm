@@ -17,5 +17,14 @@ public class StackMain {
             System.out.println(arrayStack.pop());
         }
 
+
+        String bracket_1 = "{[]()}";
+        String bracket_2 = "[{()}([])]";
+        String bracket_3 = "{[}()]";
+        String bracket_4 = "()";
+        String bracket_5 = ")([]{}";
+        BracketStack bracketStack = new BracketStack();
+        System.out.println(bracketStack.isMatch(bracket_1));
+
     }
 }
