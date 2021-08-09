@@ -5,7 +5,7 @@ package com.github.zjiajun.algorithm.stack;
  * @version 1.0
  * @since 2021/7/20 22:08
  *
- * 栈-数组实现
+ * 栈-数组实现,顺序栈
  * 想象成叠盘子,先进后出,后进先出
  *
  */

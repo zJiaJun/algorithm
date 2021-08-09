@@ -18,6 +18,15 @@ public class StackMain {
         }
 
 
+        NodeStack<Integer> nodeStack = new NodeStack<>();
+        for (int i = 0; i < 10; i++) {
+            nodeStack.push(i);
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(nodeStack.pop());
+        }
+
+
         String bracket_1 = "{[]()}";
         String bracket_2 = "[{()}([])]";
         String bracket_3 = "{[}()]";
