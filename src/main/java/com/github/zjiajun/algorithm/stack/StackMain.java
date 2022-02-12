@@ -21,6 +21,7 @@ public class StackMain {
         for (int i = 0; i < 10; i++) {
             nodeStack.push(i);
         }
+
         for (int i = 0; i < 10; i++) {
             System.out.println(nodeStack.pop());
         }
