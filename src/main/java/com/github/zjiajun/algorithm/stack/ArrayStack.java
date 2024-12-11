@@ -48,7 +48,10 @@ public class ArrayStack<T> {
      */
     public T pop() {
         if (size == 0) return null;
-        return data[--size];
+        int index = --size;
+        T val = data[index];
+        data[index] = null;
+        return val;
     }
 
     /**
