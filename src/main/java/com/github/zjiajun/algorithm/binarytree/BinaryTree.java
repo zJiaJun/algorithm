@@ -1,15 +1,34 @@
 package com.github.zjiajun.algorithm.binarytree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * @author zhujiajun
  * @version 1.0
  * @since 2021/11/28 15:02
- *
+ * 基于链表left和right
  * 二叉树遍历时间复杂度O(n)
  */
 public class BinaryTree<T> {
 
-    //前序遍历
+    //按层遍历,广度优先遍历
+    public void levelOrder(TreeNode<T> root) {
+        Queue<TreeNode<T>> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode<T> node = queue.poll();
+            System.out.println(node.val);
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+            }
+        }
+    }
+
+    //前序遍历, 深度优先遍历
     public void preOrder(TreeNode<T> root) {
         if (root == null) return;
         System.out.println(root.val);
@@ -48,10 +67,12 @@ public class BinaryTree<T> {
 
         root.left = node2;
         root.right = node3;
+
         node2.left = node4;
         node2.right = node5;
         node3.left = node6;
         node3.right = node7;
+
         node4.left = node8;
         node4.right = node9;
         node6.left = node10;
@@ -64,6 +85,8 @@ public class BinaryTree<T> {
 
         TreeNode<Integer> root = initTree();
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.levelOrder(root);
+        System.out.println("按层遍历结束");
         binaryTree.preOrder(root);
         System.out.println("前序遍历结束");
         binaryTree.inOrder(root);
